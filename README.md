@@ -81,4 +81,4 @@ func pushWord(_ input: String) -> String {
 direction이 'R','r' 이라면 입력받은 배열에서 마지막 요소를 제거 후 다시 index 0번째에 추가시킨다.
 
 direction이 'L','l' 이라면 입력받은 배열에서 첫번째 요소를 제거후 다시 index 마지막번째에 추가시킨다.
----
+
