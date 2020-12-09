@@ -14,4 +14,7 @@ struct FlatCubeManager {
         //큐브 조작
         //결과
     }
+    
+    func showResult(_ flatCube: [[Character]]) {
+    }
 }
