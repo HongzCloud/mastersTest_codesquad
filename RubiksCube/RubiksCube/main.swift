@@ -15,6 +15,7 @@ func testStep2() {
     
     //Unit Test
     flatCubeManager.showResult([["R","R","W"], ["G","C","W"], ["G","B","B"]])
+    _ = flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "UUR")
 }
 
 testStep2()

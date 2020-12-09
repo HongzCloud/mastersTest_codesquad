@@ -15,6 +15,12 @@ struct FlatCubeManager {
         //결과
     }
     
+    func push(_ flatCube: [[Character]], _ order: String) -> [[Character]] {
+        var outFlatCube = flatCube
+        
+        return outFlatCube
+    }
+    
     func showResult(_ flatCube: [[Character]]) {
         for row in 0..<flatCube[0].count {
             print("\(flatCube[row][0]) \(flatCube[row][1]) \(flatCube[row][2])")
