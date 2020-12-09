@@ -7,5 +7,7 @@
 
 import Foundation
 
-print("Hello, World!")
-
+func testStep2() {
+   let flatCubeManager = FlatCubeManager()
+    flatCubeManager.startGame()
+}
