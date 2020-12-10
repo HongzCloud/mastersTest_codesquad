@@ -24,7 +24,15 @@ func testStep2() {
     //flatCubeManager.startGame()
     
     //Unit Test
-    _ = flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "UUR")
+//    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "UUR") == [["W","R","W"], ["G","C","B"], ["G","B","R"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "U") == [["R","W","R"], ["G","C","W"], ["G","B","B"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "R") == [["R","R","W"], ["G","C","B"], ["G","B","W"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "L") == [["G","R","W"], ["R","C","W"], ["G","B","B"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "B") == [["R","R","W"], ["G","C","W"], ["B","G","B"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "U'") == [["W","R","R"], ["G","C","W"], ["G","B","B"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "R'") == [["R","R","B"], ["G","C","W"], ["G","B","W"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "L'") == [["G","R","W"], ["G","C","W"], ["R","B","B"]] ? "PASS":"FAILED")
+    print(flatCubeManager.push([["R","R","W"], ["G","C","W"], ["G","B","B"]], "B'") == [["R","R","W"], ["G","C","W"], ["B","B","G"]] ? "PASS":"FAILED")
 }
 
 testStep2()
