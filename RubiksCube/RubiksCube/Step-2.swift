@@ -20,9 +20,24 @@ import Foundation
 struct FlatCubeManager {
     func startGame() {
         //초기셋팅
+        let flatCube: [[Character]] = [["R","R","W"], ["G","C","W"], ["G","B","B"]]
+        var pushedFlatCube = flatCube
+        var isGameEnd = false
+        showResult(flatCube)
+        
         //사용자 조작 입력
-        //큐브 조작
-        //결과
+        while !isGameEnd {
+            print("CODE> ", terminator:"")
+            let input = readLine() ?? ""
+            print()
+            
+            //큐브 조작
+            pushedFlatCube = push(pushedFlatCube, input)
+            
+            if input.hasPrefix("Q") || input.hasSuffix("Q") {
+                isGameEnd = true
+            }
+        }
     }
     
     func push(_ flatCube: [[Character]], _ orders: String) -> [[Character]] {
