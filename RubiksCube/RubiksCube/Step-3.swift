@@ -17,6 +17,14 @@ struct RubiksCubeManager {
     }
     
     func initializeCube() -> [[[Character]]] {
-        return [[["A"]]]
+        let rubiksCube: [[[Character]]] = [
+            [["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]],
+            [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]],
+            [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]],
+            [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]],
+            [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]],
+            [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]],
+        ]
+        return rubiksCube
     }
 }
