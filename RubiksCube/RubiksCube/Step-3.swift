@@ -10,8 +10,13 @@ import Foundation
 struct RubiksCubeManager {
     func startGame() {
         //초기셋팅
+        let rubiksCube = initializeCube()
         //사용자 입력
         //큐브 조작
         //종료
+    }
+    
+    func initializeCube() -> [[[Character]]] {
+        return [[["A"]]]
     }
 }
