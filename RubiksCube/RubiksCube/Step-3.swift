@@ -27,4 +27,8 @@ struct RubiksCubeManager {
         ]
         return rubiksCube
     }
+    
+    func printCube(_ cube: [[[Character]]]) {
+    }
 }
+

@@ -18,6 +18,7 @@ func test() {
     //Unit Test
     rubiksCubeTestManager.testStartGame()
     rubiksCubeTestManager.testInitializeCube()
+    rubiksCubeTestManager.testPrintCube()
 }
 
 test()

@@ -17,4 +17,8 @@ struct RubiksCubeTestManager {
     func testInitializeCube() {
         print(rubiksCubeManager.initializeCube() == [[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]] ? "PASS":"FAILED")
     }
+    
+    func testPrintCube() {
+        rubiksCubeManager.printCube([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]])
+    }
 }
