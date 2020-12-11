@@ -31,34 +31,35 @@ struct FlatCubeManager {
             let input = readLine() ?? ""
             print()
             
-            //큐브 조작
-            pushedFlatCube = push(pushedFlatCube, input)
+            //큐브 조작 UU'R -> [U,U',R]
+            pushedFlatCube = push(pushedFlatCube, divideOrders(input))
             
+            //종료
             if input.hasPrefix("Q") || input.hasSuffix("Q") {
                 isGameEnd = true
             }
         }
     }
     
-    func push(_ flatCube: [[Character]], _ orders: String) -> [[Character]] {
-        var outFlatCube = flatCube
-        var tempValue: Character?
+    func divideOrders(_ orders: String) -> [String] {
         var dividiedOrders = [String]()
+        let convertStrToCharArr = Array(orders)
         
-        func divideOrders() {
-            let convertStrToCharArr = Array(orders)
-            
-            for index in 0..<convertStrToCharArr.count {
-                if convertStrToCharArr[index] == "'" {
-                    continue
-                }
-                dividiedOrders.append(String(convertStrToCharArr[index]))
-                if index < convertStrToCharArr.count-1 && convertStrToCharArr[index+1] == "'" {
-                    dividiedOrders[index] = dividiedOrders[index] + String(convertStrToCharArr[index+1])
-                }
+        for index in 0..<convertStrToCharArr.count {
+            if convertStrToCharArr[index] == "'" {
+                continue
+            }
+            dividiedOrders.append(String(convertStrToCharArr[index]))
+            if index < convertStrToCharArr.count-1 && convertStrToCharArr[index+1] == "'" {
+                dividiedOrders[index] = dividiedOrders[index] + String(convertStrToCharArr[index+1])
             }
         }
-        divideOrders()
+        return dividiedOrders
+    }
+    
+    func push(_ flatCube: [[Character]], _ orders: [String]) -> [[Character]] {
+        var outFlatCube = flatCube
+        var tempValue: Character?
         
         func up(column: Int) {
             tempValue = outFlatCube[0][column]
@@ -82,8 +83,8 @@ struct FlatCubeManager {
             outFlatCube[row].insert(outFlatCube[row].removeLast(), at: 0)
         }
         
-        for index in 0..<dividiedOrders.count {
-            switch dividiedOrders[index] {
+        for order in orders {
+            switch order {
             case "U":
                 left(row: 0)
             case "U'":
@@ -106,13 +107,17 @@ struct FlatCubeManager {
             default:
                 print("이해할 수 없는 조작입니다.")
             }
-            print(dividiedOrders[index])
-            showResult(outFlatCube)
+            showResult(outFlatCube, order)
         }
         return outFlatCube
     }
     
-    func showResult(_ flatCube: [[Character]]) {
+    func showResult(_ flatCube: [[Character]], _ optionalOrder: String? = nil) {
+        
+        if let order = optionalOrder {
+            print(order)
+        }
+        
         for row in 0..<flatCube[0].count {
             print("\(flatCube[row][0]) \(flatCube[row][1]) \(flatCube[row][2])")
         }
