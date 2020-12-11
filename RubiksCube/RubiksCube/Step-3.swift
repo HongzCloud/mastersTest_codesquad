@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct RubiksCubeManager {
+    func startGame() {
+        //초기셋팅
+        //사용자 입력
+        //큐브 조작
+        //종료
+    }
+}

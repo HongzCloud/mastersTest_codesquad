@@ -7,5 +7,16 @@
 
 import Foundation
 
-print("Hello, World!")
+func main() {
+    let rubiksCubeManager = RubiksCubeManager()
 
+}
+
+func test() {
+    let rubiksCubeTestManager = RubiksCubeTestManager()
+    
+    //Unit Test
+    rubiksCubeTestManager.testStartGame()
+}
+
+test()
