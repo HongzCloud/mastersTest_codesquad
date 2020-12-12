@@ -121,7 +121,17 @@ struct RubiksCubeManager {
     
     func pushForD(_ cube: [[[Character]]]) -> [[[Character]]] {
         var myCube = cube
+        var tempValue = [Character]()
+        var tempValue2 = [Character]()
  
+        tempValue = myCube[2][2]
+        tempValue2 = myCube[0][2]
+        
+        myCube[0][2] = myCube[3][2]
+        myCube[2][2] = myCube[1][2]
+        myCube[3][2] = tempValue
+        myCube[1][2] = tempValue2
+        
         return myCube
     }
     
