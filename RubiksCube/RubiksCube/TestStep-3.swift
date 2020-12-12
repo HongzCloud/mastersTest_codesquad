@@ -21,4 +21,8 @@ struct RubiksCubeTestManager {
     func testPrintCube() {
         rubiksCubeManager.printCube([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]])
     }
+    
+    func testPush() {
+        rubiksCubeManager.push([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]], order: "F")
+    }
 }

@@ -28,6 +28,11 @@ struct RubiksCubeManager {
         return rubiksCube
     }
     
+    func push(_ cube: [[[Character]]], order: String) -> [[[Character]]] {
+       
+        return [[["A"]]]
+    }
+    
     func printCube(_ cube: [[[Character]]]) {
         //위
         for row in 0...2 {
