@@ -156,7 +156,19 @@ struct RubiksCubeManager {
     
     func pushForReverseR(_ cube: [[[Character]]]) -> [[[Character]]] {
         var myCube = cube
-
+        var tempValue = [Character]()
+        var tempValue2 = [Character]()
+ 
+        for row in 0..<3 {
+            tempValue.append(myCube[4][row][2])
+            tempValue2.append(myCube[5][row][2])
+           
+            myCube[5][row][2] = myCube[1][row][2]
+            myCube[4][row][2] = myCube[3][2-row][0]
+            myCube[3][2-row][0] = tempValue2[row]
+            myCube[1][row][2] = tempValue[row]
+        }
+        
         return myCube
     }
     
