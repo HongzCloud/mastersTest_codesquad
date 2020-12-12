@@ -29,6 +29,23 @@ struct RubiksCubeManager {
     }
     
     func printCube(_ cube: [[[Character]]]) {
+        //위
+        for row in 0...2 {
+            print("\t\t\t\(cube[4][row][0]) \(cube[4][row][1]) \(cube[4][row][2])", terminator:"")
+            print()
+        }
+        //측면
+        for row in 0..<3 {
+            for side in 0..<4 {
+                print("\(cube[side][row][0]) \(cube[side][row][1]) \(cube[side][row][2])\t", terminator:"")
+            }
+            print()
+        }
+        //아래
+        for row in 0...2 {
+            print("\t\t\t\(cube[5][row][0]) \(cube[5][row][1]) \(cube[5][row][2])", terminator:"")
+            print()
+        }
     }
 }
 
