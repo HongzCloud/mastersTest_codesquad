@@ -118,7 +118,7 @@ struct RubiksCubeManager {
         
         return myCube
     }
-    
+ 
     func pushForD(_ cube: [[[Character]]]) -> [[[Character]]] {
         var myCube = cube
         var tempValue = [Character]()
@@ -132,6 +132,12 @@ struct RubiksCubeManager {
         myCube[3][2] = tempValue
         myCube[1][2] = tempValue2
         
+        return myCube
+    }
+    
+    func pushForReverseF(_ cube: [[[Character]]]) -> [[[Character]]] {
+        var myCube = cube
+
         return myCube
     }
     
@@ -151,6 +157,8 @@ struct RubiksCubeManager {
             myCube = pushForL(cube)
         case "D":
             myCube = pushForD(cube)
+        case "F'":
+            myCube = pushForReverseF(cube)
         default:
             break
         }
