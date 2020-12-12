@@ -207,6 +207,12 @@ struct RubiksCubeManager {
         return myCube
     }
     
+    func pushForReverseD(_ cube: [[[Character]]]) -> [[[Character]]] {
+        var myCube = cube
+
+        return myCube
+    }
+    
     func pushNavigator(_ cube: [[[Character]]], order: String) -> [[[Character]]] {
         var myCube = cube
         
@@ -231,6 +237,8 @@ struct RubiksCubeManager {
             myCube = pushForReverseU(cube)
         case "L'":
             myCube = pushForReverseL(cube)
+        case "D'":
+            myCube = pushForReverseD(cube)
         default:
             break
         }
