@@ -42,7 +42,7 @@ struct RubiksCubeManager {
 
         for row in 0..<3 {
             myCube[2][row][0] = tempValue[row]
-            myCube[0][2-row][2] = tempValue2[row]
+            myCube[0][row][2] = tempValue2[row]
         }
         
         return myCube
@@ -82,6 +82,12 @@ struct RubiksCubeManager {
         return myCube
     }
     
+    func pushForB(_ cube: [[[Character]]]) -> [[[Character]]] {
+        var myCube = cube
+
+        return myCube
+    }
+    
     func pushNavigator(_ cube: [[[Character]]], order: String) -> [[[Character]]] {
         var myCube = cube
         
@@ -92,7 +98,8 @@ struct RubiksCubeManager {
             myCube = pushForR(cube)
         case "U":
             myCube = pushForU(cube)
-            break
+        case "B":
+            myCube = pushForB(cube)
         default:
             break
         }
