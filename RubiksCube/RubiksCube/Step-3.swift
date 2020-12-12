@@ -28,28 +28,38 @@ struct RubiksCubeManager {
         return rubiksCube
     }
     
-    func push(_ cube: [[[Character]]], order: String) -> [[[Character]]] {
+   
+    func pushForF(_ cube: [[[Character]]]) -> [[[Character]]] {
+        var myCube = cube
         var tempValue = [Character]()
         var tempValue2 = [Character]()
-        var cube = cube
+        
+        tempValue = cube[4][2]
+        tempValue2 = cube[5][0]
+        
+        myCube[5][0] = [myCube[2][2][0],myCube[2][1][0],myCube[2][0][0]]
+        myCube[4][2] = [myCube[0][2][2],myCube[0][1][2],myCube[0][0][2]]
 
+        for row in 0..<3 {
+            myCube[2][row][0] = tempValue[row]
+            myCube[0][2-row][2] = tempValue2[row]
+        }
+        
+        return myCube
+    }
+    
+    func pushNavigator(_ cube: [[[Character]]], order: String) -> [[[Character]]] {
+        var myCube = cube
+        
         switch order {
         case "F":
-            tempValue = cube[4][2]
-            tempValue2 = cube[5][0]
-            cube[4][2] = [cube[1][2][2],cube[1][1][2],cube[1][2][2]]
-            cube[5][0] = [cube[3][2][0],cube[3][1][0],cube[3][0][0]]
-            cube[3][0][0] = tempValue[0]
-            cube[3][1][0] = tempValue[1]
-            cube[3][2][0] = tempValue[2]
-            cube[1][2][2] = tempValue2[0]
-            cube[1][1][2] = tempValue2[1]
-            cube[1][0][2] = tempValue2[2]
+            myCube = pushForF(cube)
         default:
             break
         }
-        printCube(cube)
-        return [[["A"]]]
+        
+        printCube(myCube)
+        return myCube
     }
     
     func printCube(_ cube: [[[Character]]]) {
