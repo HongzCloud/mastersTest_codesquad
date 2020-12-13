@@ -12,6 +12,7 @@ struct RubiksCubeManager {
         //초기셋팅
         var myRubiksCube = initializeCube()
         var isGameEnd = false
+        var orderCount = 0
         printCube(myRubiksCube)
 
         while !isGameEnd {
@@ -27,9 +28,11 @@ struct RubiksCubeManager {
                 print()
             }
             
+            orderCount += divideOrders(input).count
             //종료
             if input == "Q" {
                 print("이용해주셔서 감사합니다. 🥰")
+                print("조각 갯수 : \(orderCount-1)")
                 isGameEnd = true
             }
         }
