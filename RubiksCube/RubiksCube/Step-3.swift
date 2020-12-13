@@ -4,7 +4,17 @@
 //
 //  Created by 오킹 on 2020/12/11.
 //
-
+/*
+ order 종류
+ F : O면 기준으로 오른쪽으로 돌림
+ R : G면 기준으로 오른쪽으로 돌림
+ U : B면 기준으로 오른쪽으로 돌림
+ B : Y면 기준으로 오른쪽으로 돌림
+ L : W면 기준으로 오른쪽으로 돌림
+ D : R면 기준으로 오른쪽으로 돌림
+ Q : 종료
+ S : 뒤섞기
+ */
 import Foundation
 
 struct RubiksCubeManager {
@@ -27,7 +37,7 @@ struct RubiksCubeManager {
             for index in 0..<divideOrders(input).count {
                 print(divideOrders(input)[index])
                 myRubiksCube = pushNavigator(myRubiksCube, order: divideOrders(input)[index])
-                print()
+                printCube(myRubiksCube)
             }
             orderCount += divideOrders(input).count
             
@@ -327,11 +337,16 @@ struct RubiksCubeManager {
             myCube = pushForReverseL(cube)
         case "D'":
             myCube = pushForReverseD(cube)
+        case "S":
+            //뒤섞기
+            let orders = ["F","R","U","L","B","D"]
+            for _ in 0...20 {
+                myCube = pushNavigator(myCube, order: orders.randomElement()!)
+            }
         default:
             break
         }
         
-        printCube(myCube)
         return myCube
     }
     
