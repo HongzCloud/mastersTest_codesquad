@@ -20,6 +20,7 @@ func test() {
     rubiksCubeTestManager.testInitializeCube()
     rubiksCubeTestManager.testPrintCube()
     rubiksCubeTestManager.testPushNavigator()
+    rubiksCubeTestManager.testDivideOrders()
 }
 
 test()

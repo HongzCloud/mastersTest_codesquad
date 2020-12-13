@@ -28,6 +28,9 @@ struct RubiksCubeManager {
         return rubiksCube
     }
     
+    func divideOrders(_ orders: String) -> [String] {
+        return ["U", "U'", "R"]
+    }
    
     func pushForF(_ cube: [[[Character]]]) -> [[[Character]]] {
         var myCube = cube

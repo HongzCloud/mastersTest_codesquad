@@ -33,6 +33,10 @@ struct RubiksCubeTestManager {
 //        rubiksCubeManager.pushNavigator([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]], order: "R'")
 //        rubiksCubeManager.pushNavigator([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]], order: "U'")
 //        rubiksCubeManager.pushNavigator([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]], order: "L'")
-        rubiksCubeManager.pushNavigator([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]], order: "D'")
+//        rubiksCubeManager.pushNavigator([[["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]], [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]], [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]], [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]], [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]], [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]], order: "D'")
+    }
+    
+    func testDivideOrders() {
+        print(rubiksCubeManager.divideOrders("UU'R"))
     }
 }
