@@ -39,7 +39,7 @@ struct RubiksCubeManager {
             }
             
             //추가 기능 : 모든 면을 맞출시 종료
-            if orderCount != 0 && myRubiksCube == rubiksCube {
+            else if orderCount != 0 && myRubiksCube == rubiksCube {
                 print("축하합니다 맞추셨어요.~ 🥰")
                 print("조각 갯수 : \(orderCount)")
                 isGameEnd = true
@@ -47,7 +47,7 @@ struct RubiksCubeManager {
         }
         let endTime = Date()
         let useTime = Int(endTime.timeIntervalSince(startTime))
-        print("경과 시간 : \(String(format: "0%0d", useTime/60)):\(String(format: "0%0d", useTime%60))")
+        print("경과 시간 : \(String(format: "%02d", useTime/60)):\(String(format: "%02d", useTime%60))")
     }
     
     func initializeCube() -> [[[Character]]] {
