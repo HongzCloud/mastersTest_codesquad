@@ -38,5 +38,6 @@ struct RubiksCubeTestManager {
     
     func testDivideOrders() {
         print(rubiksCubeManager.divideOrders("UU'R"))
+        print(rubiksCubeManager.divideOrders("UU'R'"))
     }
 }
