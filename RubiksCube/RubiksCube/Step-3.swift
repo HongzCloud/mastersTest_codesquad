@@ -10,10 +10,29 @@ import Foundation
 struct RubiksCubeManager {
     func startGame() {
         //초기셋팅
-        let rubiksCube = initializeCube()
-        //사용자 입력
-        //큐브 조작
-        //종료
+        var myRubiksCube = initializeCube()
+        var isGameEnd = false
+        printCube(myRubiksCube)
+
+        while !isGameEnd {
+            //사용자 입력
+            print("CODE> ", terminator:"")
+            let input = readLine() ?? ""
+            print()
+            
+            //큐브 조작
+            for index in 0..<divideOrders(input).count {
+                print(divideOrders(input)[index])
+                myRubiksCube = pushNavigator(myRubiksCube, order: divideOrders(input)[index])
+                print()
+            }
+            
+            //종료
+            if input == "Q" {
+                print("이용해주셔서 감사합니다. 🥰")
+                isGameEnd = true
+            }
+        }
     }
     
     func initializeCube() -> [[[Character]]] {

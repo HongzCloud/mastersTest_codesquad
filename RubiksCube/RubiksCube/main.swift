@@ -17,10 +17,10 @@ func test() {
     
     //Unit Test
     rubiksCubeTestManager.testStartGame()
-    rubiksCubeTestManager.testInitializeCube()
-    rubiksCubeTestManager.testPrintCube()
-    rubiksCubeTestManager.testPushNavigator()
-    rubiksCubeTestManager.testDivideOrders()
+//    rubiksCubeTestManager.testInitializeCube()
+//    rubiksCubeTestManager.testPrintCube()
+//    rubiksCubeTestManager.testPushNavigator()
+//    rubiksCubeTestManager.testDivideOrders()
 }
 
 test()
