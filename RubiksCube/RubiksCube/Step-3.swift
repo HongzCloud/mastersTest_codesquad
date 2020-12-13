@@ -20,8 +20,7 @@ import Foundation
 struct RubiksCubeManager {
     func startGame() {
         //초기셋팅
-        let rubiksCube = initializeCube()
-        var myRubiksCube = rubiksCube
+        var myRubiksCube = initializeCube()
         var isGameEnd = false
         var orderCount = 0
         let startTime = Date()
@@ -29,10 +28,8 @@ struct RubiksCubeManager {
 
         while !isGameEnd {
             //사용자 입력
-            print("CODE> ", terminator:"")
-            let input = readLine() ?? ""
-            print()
-            
+            let input = userInput()
+     
             //큐브 조작
             for index in 0..<divideOrders(input).count {
                 print(divideOrders(input)[index])
@@ -42,22 +39,37 @@ struct RubiksCubeManager {
             orderCount += divideOrders(input).count
             
             //종료
-            if input == "Q" {
-                print("이용해주셔서 감사합니다. 🥰")
-                print("조각 갯수 : \(orderCount-1)")
-                isGameEnd = true
-            }
-            
-            //추가 기능 : 모든 면을 맞출시 종료
-            else if orderCount != 0 && myRubiksCube == rubiksCube {
-                print("축하합니다 맞추셨어요.~ 🥰")
-                print("조각 갯수 : \(orderCount)")
-                isGameEnd = true
-            }
+            isGameEnd = jugeEndGame(cube: myRubiksCube, order: input, orderCount: orderCount)
         }
         let endTime = Date()
         let useTime = Int(endTime.timeIntervalSince(startTime))
         print("경과 시간 : \(String(format: "%02d", useTime/60)):\(String(format: "%02d", useTime%60))")
+    }
+    
+    func userInput() -> String {
+        print("CODE> ", terminator:"")
+        let input = readLine() ?? ""
+        print()
+        
+        return input
+    }
+    
+    func jugeEndGame(cube: [[[Character]]], order: String, orderCount: Int) -> Bool {
+        if order == "Q" {
+            print("이용해주셔서 감사합니다. 🥰")
+            print("조각 갯수 : \(orderCount-1)")
+            
+            return true
+        }
+        
+        //추가 기능 : 모든 면을 맞출시 종료
+        else if orderCount != 0 && cube == initializeCube() {
+            print("축하합니다 맞추셨어요.~ 🥰")
+            print("조각 갯수 : \(orderCount)")
+            return true
+        }
+        
+        return false
     }
     
     func initializeCube() -> [[[Character]]] {
