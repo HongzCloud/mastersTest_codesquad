@@ -38,7 +38,7 @@ struct RubiksCubeManager {
             }
             dividiedOrders.append(String(convertStrToCharArr[index]))
             if index < convertStrToCharArr.count-1 && convertStrToCharArr[index+1] == "'" {
-                dividiedOrders[index] = dividiedOrders[index] + String(convertStrToCharArr[index+1])
+                dividiedOrders[dividiedOrders.count-1] += "'"
             }
         }
         return dividiedOrders
