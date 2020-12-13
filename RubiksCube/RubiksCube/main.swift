@@ -16,7 +16,7 @@ func test() {
     let rubiksCubeTestManager = RubiksCubeTestManager()
     
     //Unit Test
-    rubiksCubeTestManager.testStartGame()
+      rubiksCubeTestManager.testStartGame()
 //    rubiksCubeTestManager.testInitializeCube()
 //    rubiksCubeTestManager.testPrintCube()
 //    rubiksCubeTestManager.testPushNavigator()

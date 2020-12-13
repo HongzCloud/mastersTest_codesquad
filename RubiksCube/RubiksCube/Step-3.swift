@@ -14,6 +14,7 @@ struct RubiksCubeManager {
         var myRubiksCube = rubiksCube
         var isGameEnd = false
         var orderCount = 0
+        let startTime = Date()
         printCube(myRubiksCube)
 
         while !isGameEnd {
@@ -44,6 +45,9 @@ struct RubiksCubeManager {
                 isGameEnd = true
             }
         }
+        let endTime = Date()
+        let useTime = Int(endTime.timeIntervalSince(startTime))
+        print("경과 시간 : \(String(format: "0%0d", useTime/60)):\(String(format: "0%0d", useTime%60))")
     }
     
     func initializeCube() -> [[[Character]]] {
