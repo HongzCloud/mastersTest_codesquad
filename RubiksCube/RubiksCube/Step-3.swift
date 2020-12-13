@@ -242,6 +242,25 @@ struct RubiksCubeManager {
         return myCube
     }
     
+    func pushForReverseB(_ cube: [[[Character]]]) -> [[[Character]]] {
+        var myCube = cube
+        var tempValue = [Character]()
+        var tempValue2 = [Character]()
+        
+        tempValue = cube[4][0]
+        tempValue2 = cube[5][2]
+        
+        myCube[4][0] = [myCube[0][0][0],myCube[0][1][0],myCube[0][2][0]]
+        myCube[5][2] = [myCube[2][0][0],myCube[2][1][0],myCube[2][2][0]]
+        
+        for row in 0..<3 {
+            myCube[2][row][0] = tempValue[2-row]
+            myCube[0][row][0] = tempValue2[2-row]
+        }
+        
+        return myCube
+    }
+    
     func pushForReverseL(_ cube: [[[Character]]]) -> [[[Character]]] {
         var myCube = cube
         var tempValue = [Character]()
@@ -302,6 +321,8 @@ struct RubiksCubeManager {
             myCube = pushForReverseR(cube)
         case "U'":
             myCube = pushForReverseU(cube)
+        case "B'":
+            myCube = pushForReverseB(cube)
         case "L'":
             myCube = pushForReverseL(cube)
         case "D'":
