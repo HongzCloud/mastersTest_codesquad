@@ -29,7 +29,19 @@ struct RubiksCubeManager {
     }
     
     func divideOrders(_ orders: String) -> [String] {
-        return ["U", "U'", "R"]
+        var dividiedOrders = [String]()
+        let convertStrToCharArr = Array(orders)
+        
+        for index in 0..<convertStrToCharArr.count {
+            if convertStrToCharArr[index] == "'" {
+                continue
+            }
+            dividiedOrders.append(String(convertStrToCharArr[index]))
+            if index < convertStrToCharArr.count-1 && convertStrToCharArr[index+1] == "'" {
+                dividiedOrders[index] = dividiedOrders[index] + String(convertStrToCharArr[index+1])
+            }
+        }
+        return dividiedOrders
     }
    
     func pushForF(_ cube: [[[Character]]]) -> [[[Character]]] {
