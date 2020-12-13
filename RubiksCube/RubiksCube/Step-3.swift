@@ -10,7 +10,8 @@ import Foundation
 struct RubiksCubeManager {
     func startGame() {
         //초기셋팅
-        var myRubiksCube = initializeCube()
+        let rubiksCube = initializeCube()
+        var myRubiksCube = rubiksCube
         var isGameEnd = false
         var orderCount = 0
         printCube(myRubiksCube)
@@ -27,12 +28,19 @@ struct RubiksCubeManager {
                 myRubiksCube = pushNavigator(myRubiksCube, order: divideOrders(input)[index])
                 print()
             }
-            
             orderCount += divideOrders(input).count
+            
             //종료
             if input == "Q" {
                 print("이용해주셔서 감사합니다. 🥰")
                 print("조각 갯수 : \(orderCount-1)")
+                isGameEnd = true
+            }
+            
+            //추가 기능 : 모든 면을 맞출시 종료
+            if orderCount != 0 && myRubiksCube == rubiksCube {
+                print("축하합니다 맞추셨어요.~ 🥰")
+                print("조각 갯수 : \(orderCount)")
                 isGameEnd = true
             }
         }
