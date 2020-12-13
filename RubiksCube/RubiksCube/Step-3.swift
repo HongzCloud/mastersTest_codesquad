@@ -139,11 +139,11 @@ struct RubiksCubeManager {
         tempValue = cube[4][0]
         tempValue2 = cube[5][2]
         
-        myCube[5][2] = [myCube[0][0][2],myCube[0][1][2],myCube[0][2][2]]
+        myCube[5][2] = [myCube[0][0][0],myCube[0][1][0],myCube[0][2][0]]
         myCube[4][0] = [myCube[2][0][0],myCube[2][1][0],myCube[2][2][0]]
         
         for row in 0..<3 {
-            myCube[2][row][2] = tempValue2[2-row]
+            myCube[2][row][0] = tempValue2[2-row]
             myCube[0][row][0] = tempValue[2-row]
         }
         
@@ -154,15 +154,19 @@ struct RubiksCubeManager {
         var myCube = cube
         var tempValue = [Character]()
         var tempValue2 = [Character]()
+        var tempValue3 = [Character]()
+        var tempValue4 = [Character]()
  
+        tempValue = [myCube[4][0][0], myCube[4][1][0], myCube[4][2][0]]
+        tempValue2 = [myCube[5][0][0], myCube[5][1][0], myCube[5][2][0]]
+        tempValue3 = [myCube[3][0][2], myCube[3][1][2], myCube[3][2][2]]
+        tempValue4 = [myCube[1][0][0], myCube[1][1][0], myCube[1][2][0]]
+        
         for row in 0..<3 {
-            tempValue.append(myCube[4][row][2])
-            tempValue2.append(myCube[5][row][2])
-            
-            myCube[5][row][0] = myCube[1][row][0]
-            myCube[4][row][0] = myCube[3][2-row][2]
             myCube[3][2-row][2] = tempValue2[row]
             myCube[1][row][0] = tempValue[row]
+            myCube[5][row][0] = tempValue4[row]
+            myCube[4][2-row][0] = tempValue3[row]
         }
         
         return myCube
@@ -231,8 +235,8 @@ struct RubiksCubeManager {
         tempValue2 = myCube[0][0]
 
         myCube[0][0] = myCube[3][0]
-        myCube[1][0] = tempValue2
         myCube[2][0] = myCube[1][0]
+        myCube[1][0] = tempValue2
         myCube[3][0] = tempValue
         
         return myCube
@@ -242,15 +246,19 @@ struct RubiksCubeManager {
         var myCube = cube
         var tempValue = [Character]()
         var tempValue2 = [Character]()
+        var tempValue3 = [Character]()
+        var tempValue4 = [Character]()
  
+        tempValue = [myCube[4][0][0], myCube[4][1][0], myCube[4][2][0]]
+        tempValue2 = [myCube[5][0][0], myCube[5][1][0], myCube[5][2][0]]
+        tempValue3 = [myCube[3][0][2], myCube[3][1][2], myCube[3][2][2]]
+        tempValue4 = [myCube[1][0][0], myCube[1][1][0], myCube[1][2][0]]
+        
         for row in 0..<3 {
-            tempValue.append(myCube[4][row][2])
-            tempValue2.append(myCube[5][row][2])
-            
-            myCube[5][row][0] = myCube[3][2-row][2]
-            myCube[4][row][0] = myCube[1][row][0]
             myCube[3][2-row][2] = tempValue[row]
             myCube[1][row][0] = tempValue2[row]
+            myCube[5][row][0] = tempValue3[row]
+            myCube[4][2-row][0] = tempValue4[row]
         }
         
         return myCube
